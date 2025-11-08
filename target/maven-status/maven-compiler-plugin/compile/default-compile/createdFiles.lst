@@ -1,0 +1,5 @@
+com\sam\sidTask\servlets\RegisterServlet.class
+com\sam\sidTask\util\MailUtil$1.class
+com\sam\sidTask\util\DbUtil.class
+com\sam\sidTask\SidTaskApplication.class
+com\sam\sidTask\util\MailUtil.class
