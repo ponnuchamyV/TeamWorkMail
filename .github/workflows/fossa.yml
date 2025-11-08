@@ -1,6 +1,5 @@
 name: FOSSA License Scan
 
-# Trigger workflow on push or PR to these branches
 on:
   push:
     branches: [ main, sam, pooja, nithya ]
@@ -12,20 +11,14 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      # Step 1: Check out the repository
       - name: Checkout code
         uses: actions/checkout@v4
 
-      # Step 2: Run FOSSA scan
       - name: Run FOSSA scan
         uses: fossas/fossa-action@v1
         with:
-          # Your FOSSA API key stored as a GitHub secret
           api-key: ${{ secrets.FOSSA_API_KEY }}
-          # Optional: set to true if you don't want CI to fail on violations
-          ignore-failures: false
 
-      # Optional Step 3: Upload FOSSA results as artifact (useful for logs/reports)
       - name: Upload FOSSA report
         if: always()
         uses: actions/upload-artifact@v4
